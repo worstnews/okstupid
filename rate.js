@@ -1,6 +1,6 @@
 var url = 'https://www.okcupid.com/login', 
-    username = '  ', //don't forget to enter your own credentials ya dummy! 
-    password = '  ',
+    username = ' ',      //don't forget to enter your own credentials ya dummy! 
+    password = ' ',
     x = require('casper').selectXPath;
 
 casper.test.comment('we bout to rate EVERYONE');
@@ -11,196 +11,447 @@ casper.start(url, function () {
         'username': username,
         'password' : password
     }, true);
+    this.wait(1000); // sometimes casper craps out here, so adding a wait to be safe  
   });
   
     casper.thenClick('#nav_ratings a', function () {
-        this.test.info('click through to quickmatch');
+        this.test.info('q u i c k m a t c h');
     });
 
-/* this is ghetto and i'm embarassed.
-   it seems like OKC limits ratings somehow. tried looping it 100x anid it crapped out silently at some point.
-   leaving it at 25 for now
-*/
+// this is embarassing and i hate it
+// script runs really slow right now and seems to fail silently around 50-100 (i know)
+// until i can optimize and figure out OKC's threshold, gonna leave at 25
+    
+    casper.then(function() {
+        this.click(x('//*[@id="stars"]/li[5]'));
+        this.wait(1000); //   
+    });
+
+          casper.then(function() {
+              var url = this.evaluate(function() {
+                  return __utils__.getElementByXPath("//a[contains(@href,'?cf=quickmatch')]").href;
+              });
+              this.echo('you just rated ' + url, 'INFO');
+              this.open(url);
+              this.echo('...visiting her profile'); 
+          });
+          
+          casper.thenOpen('http://www.okcupid.com/quickmatch', function() {
+          });
 
     casper.then(function() {
         this.click(x('//*[@id="stars"]/li[5]'));
-        this.wait(3000); // wait before doing anything else  
-        this.echo('you just gave 5 stars to ' + this.evaluate(function() {
-            return __utils__.getElementByXPath('//a[contains(@href, "?cf=quickmatch/")]').getAttribute('href');
-        }), 'INFO'); // print dat shit
+        this.wait(1000); //   
     });
+
+          casper.then(function() {
+              var url = this.evaluate(function() {
+                  return __utils__.getElementByXPath("//a[contains(@href,'?cf=quickmatch')]").href;
+              });
+              this.echo('you just rated ' + url, 'INFO');
+              this.open(url);
+              this.echo('...visiting her profile'); 
+          });
+          
+          casper.thenOpen('http://www.okcupid.com/quickmatch', function() {
+          });
+
+
     casper.then(function() {
         this.click(x('//*[@id="stars"]/li[5]'));
-        this.wait(3000); // wait before doing anything else  
-        this.echo('you just gave 5 stars to ' + this.evaluate(function() {
-            return __utils__.getElementByXPath('//a[contains(@href, "?cf=quickmatch/")]').getAttribute('href');
-        }), 'INFO'); // print dat shit
+        this.wait(1000); //   
     });
+
+          casper.then(function() {
+              var url = this.evaluate(function() {
+                  return __utils__.getElementByXPath("//a[contains(@href,'?cf=quickmatch')]").href;
+              });
+              this.echo('you just rated ' + url, 'INFO');
+              this.open(url);
+              this.echo('...visiting her profile'); 
+          });
+          
+          casper.thenOpen('http://www.okcupid.com/quickmatch', function() {
+          });
+
     casper.then(function() {
         this.click(x('//*[@id="stars"]/li[5]'));
-        this.wait(3000); // wait before doing anything else  
-        this.echo('you just gave 5 stars to ' + this.evaluate(function() {
-            return __utils__.getElementByXPath('//a[contains(@href, "?cf=quickmatch/")]').getAttribute('href');
-        }), 'INFO'); // print dat shit
+        this.wait(1000); //   
     });
+
+          casper.then(function() {
+              var url = this.evaluate(function() {
+                  return __utils__.getElementByXPath("//a[contains(@href,'?cf=quickmatch')]").href;
+              });
+              this.echo('you just rated ' + url, 'INFO');
+              this.open(url);
+              this.echo('...visiting her profile'); 
+          });
+          
+          casper.thenOpen('http://www.okcupid.com/quickmatch', function() {
+          });
+
+
     casper.then(function() {
         this.click(x('//*[@id="stars"]/li[5]'));
-        this.wait(3000); // wait before doing anything else  
-        this.echo('you just gave 5 stars to ' + this.evaluate(function() {
-            return __utils__.getElementByXPath('//a[contains(@href, "?cf=quickmatch/")]').getAttribute('href');
-        }), 'INFO'); // print dat shit
+        this.wait(1000); //   
     });
+
+          casper.then(function() {
+              var url = this.evaluate(function() {
+                  return __utils__.getElementByXPath("//a[contains(@href,'?cf=quickmatch')]").href;
+              });
+              this.echo('you just rated ' + url, 'INFO');
+              this.open(url);
+              this.echo('...visiting her profile'); 
+          });
+          
+          casper.thenOpen('http://www.okcupid.com/quickmatch', function() {
+          });
+
     casper.then(function() {
         this.click(x('//*[@id="stars"]/li[5]'));
-        this.wait(3000); // wait before doing anything else  
-        this.echo('you just gave 5 stars to ' + this.evaluate(function() {
-            return __utils__.getElementByXPath('//a[contains(@href, "?cf=quickmatch/")]').getAttribute('href');
-        }), 'INFO'); // print dat shit
+        this.wait(1000); //   
     });
+
+          casper.then(function() {
+              var url = this.evaluate(function() {
+                  return __utils__.getElementByXPath("//a[contains(@href,'?cf=quickmatch')]").href;
+              });
+              this.echo('you just rated ' + url, 'INFO');
+              this.open(url);
+              this.echo('...visiting her profile'); 
+          });
+          
+          casper.thenOpen('http://www.okcupid.com/quickmatch', function() {
+          });
+
     casper.then(function() {
         this.click(x('//*[@id="stars"]/li[5]'));
-        this.wait(3000); // wait before doing anything else  
-        this.echo('you just gave 5 stars to ' + this.evaluate(function() {
-            return __utils__.getElementByXPath('//a[contains(@href, "?cf=quickmatch/")]').getAttribute('href');
-        }), 'INFO'); // print dat shit
+        this.wait(1000); //   
     });
+
+          casper.then(function() {
+              var url = this.evaluate(function() {
+                  return __utils__.getElementByXPath("//a[contains(@href,'?cf=quickmatch')]").href;
+              });
+              this.echo('you just rated ' + url, 'INFO');
+              this.open(url);
+              this.echo('...visiting her profile'); 
+          });
+          
+          casper.thenOpen('http://www.okcupid.com/quickmatch', function() {
+          });
+
     casper.then(function() {
         this.click(x('//*[@id="stars"]/li[5]'));
-        this.wait(3000); // wait before doing anything else  
-        this.echo('you just gave 5 stars to ' + this.evaluate(function() {
-            return __utils__.getElementByXPath('//a[contains(@href, "?cf=quickmatch/")]').getAttribute('href');
-        }), 'INFO'); // print dat shit
+        this.wait(1000); //   
     });
+
+          casper.then(function() {
+              var url = this.evaluate(function() {
+                  return __utils__.getElementByXPath("//a[contains(@href,'?cf=quickmatch')]").href;
+              });
+              this.echo('you just rated ' + url, 'INFO');
+              this.open(url);
+              this.echo('...visiting her profile'); 
+          });
+          
+          casper.thenOpen('http://www.okcupid.com/quickmatch', function() {
+          });
+
     casper.then(function() {
         this.click(x('//*[@id="stars"]/li[5]'));
-        this.wait(3000); // wait before doing anything else  
-        this.echo('you just gave 5 stars to ' + this.evaluate(function() {
-            return __utils__.getElementByXPath('//a[contains(@href, "?cf=quickmatch/")]').getAttribute('href');
-        }), 'INFO'); // print dat shit
+        this.wait(1000); //   
     });
+
+          casper.then(function() {
+              var url = this.evaluate(function() {
+                  return __utils__.getElementByXPath("//a[contains(@href,'?cf=quickmatch')]").href;
+              });
+              this.echo('you just rated ' + url, 'INFO');
+              this.open(url);
+              this.echo('...visiting her profile'); 
+          });
+          
+          casper.thenOpen('http://www.okcupid.com/quickmatch', function() {
+          });
+
     casper.then(function() {
         this.click(x('//*[@id="stars"]/li[5]'));
-        this.wait(3000); // wait before doing anything else  
-        this.echo('you just gave 5 stars to ' + this.evaluate(function() {
-            return __utils__.getElementByXPath('//a[contains(@href, "?cf=quickmatch/")]').getAttribute('href');
-        }), 'INFO'); // print dat shit
+        this.wait(1000); //   
     });
+
+          casper.then(function() {
+              var url = this.evaluate(function() {
+                  return __utils__.getElementByXPath("//a[contains(@href,'?cf=quickmatch')]").href;
+              });
+              this.echo('you just rated ' + url, 'INFO');
+              this.open(url);
+              this.echo('...visiting her profile'); 
+          });
+          
+          casper.thenOpen('http://www.okcupid.com/quickmatch', function() {
+          });
+
     casper.then(function() {
         this.click(x('//*[@id="stars"]/li[5]'));
-        this.wait(3000); // wait before doing anything else  
-        this.echo('you just gave 5 stars to ' + this.evaluate(function() {
-            return __utils__.getElementByXPath('//a[contains(@href, "?cf=quickmatch/")]').getAttribute('href');
-        }), 'INFO'); // print dat shit
+        this.wait(1000); //   
     });
+
+          casper.then(function() {
+              var url = this.evaluate(function() {
+                  return __utils__.getElementByXPath("//a[contains(@href,'?cf=quickmatch')]").href;
+              });
+              this.echo('you just rated ' + url, 'INFO');
+              this.open(url);
+              this.echo('...visiting her profile'); 
+          });
+          
+          casper.thenOpen('http://www.okcupid.com/quickmatch', function() {
+          });
+
     casper.then(function() {
         this.click(x('//*[@id="stars"]/li[5]'));
-        this.wait(3000); // wait before doing anything else  
-        this.echo('you just gave 5 stars to ' + this.evaluate(function() {
-            return __utils__.getElementByXPath('//a[contains(@href, "?cf=quickmatch/")]').getAttribute('href');
-        }), 'INFO'); // print dat shit
+        this.wait(1000); //   
     });
+
+          casper.then(function() {
+              var url = this.evaluate(function() {
+                  return __utils__.getElementByXPath("//a[contains(@href,'?cf=quickmatch')]").href;
+              });
+              this.echo('you just rated ' + url, 'INFO');
+              this.open(url);
+              this.echo('...visiting her profile'); 
+          });
+          
+          casper.thenOpen('http://www.okcupid.com/quickmatch', function() {
+          });
+
+
     casper.then(function() {
         this.click(x('//*[@id="stars"]/li[5]'));
-        this.wait(3000); // wait before doing anything else  
-        this.echo('you just gave 5 stars to ' + this.evaluate(function() {
-            return __utils__.getElementByXPath('//a[contains(@href, "?cf=quickmatch/")]').getAttribute('href');
-        }), 'INFO'); // print dat shit
+        this.wait(1000); //   
     });
+
+          casper.then(function() {
+              var url = this.evaluate(function() {
+                  return __utils__.getElementByXPath("//a[contains(@href,'?cf=quickmatch')]").href;
+              });
+              this.echo('you just rated ' + url, 'INFO');
+              this.open(url);
+              this.echo('...visiting her profile'); 
+          });
+          
+          casper.thenOpen('http://www.okcupid.com/quickmatch', function() {
+          });
+
     casper.then(function() {
         this.click(x('//*[@id="stars"]/li[5]'));
-        this.wait(3000); // wait before doing anything else  
-        this.echo('you just gave 5 stars to ' + this.evaluate(function() {
-            return __utils__.getElementByXPath('//a[contains(@href, "?cf=quickmatch/")]').getAttribute('href');
-        }), 'INFO'); // print dat shit
+        this.wait(1000); //   
     });
+
+          casper.then(function() {
+              var url = this.evaluate(function() {
+                  return __utils__.getElementByXPath("//a[contains(@href,'?cf=quickmatch')]").href;
+              });
+              this.echo('you just rated ' + url, 'INFO');
+              this.open(url);
+              this.echo('...visiting her profile'); 
+          });
+          
+          casper.thenOpen('http://www.okcupid.com/quickmatch', function() {
+          });
+
     casper.then(function() {
         this.click(x('//*[@id="stars"]/li[5]'));
-        this.wait(3000); // wait before doing anything else  
-        this.echo('you just gave 5 stars to ' + this.evaluate(function() {
-            return __utils__.getElementByXPath('//a[contains(@href, "?cf=quickmatch/")]').getAttribute('href');
-        }), 'INFO'); // print dat shit
+        this.wait(1000); //   
     });
+
+          casper.then(function() {
+              var url = this.evaluate(function() {
+                  return __utils__.getElementByXPath("//a[contains(@href,'?cf=quickmatch')]").href;
+              });
+              this.echo('you just rated ' + url, 'INFO');
+              this.open(url);
+              this.echo('...visiting her profile'); 
+          });
+          
+          casper.thenOpen('http://www.okcupid.com/quickmatch', function() {
+          });
+
     casper.then(function() {
         this.click(x('//*[@id="stars"]/li[5]'));
-        this.wait(3000); // wait before doing anything else  
-        this.echo('you just gave 5 stars to ' + this.evaluate(function() {
-            return __utils__.getElementByXPath('//a[contains(@href, "?cf=quickmatch/")]').getAttribute('href');
-        }), 'INFO'); // print dat shit
+        this.wait(1000); //   
     });
+
+          casper.then(function() {
+              var url = this.evaluate(function() {
+                  return __utils__.getElementByXPath("//a[contains(@href,'?cf=quickmatch')]").href;
+              });
+              this.echo('you just rated ' + url, 'INFO');
+              this.open(url);
+              this.echo('...visiting her profile'); 
+          });
+          
+          casper.thenOpen('http://www.okcupid.com/quickmatch', function() {
+          });
+
     casper.then(function() {
         this.click(x('//*[@id="stars"]/li[5]'));
-        this.wait(3000); // wait before doing anything else  
-        this.echo('you just gave 5 stars to ' + this.evaluate(function() {
-            return __utils__.getElementByXPath('//a[contains(@href, "?cf=quickmatch/")]').getAttribute('href');
-        }), 'INFO'); // print dat shit
+        this.wait(1000); //   
     });
+
+          casper.then(function() {
+              var url = this.evaluate(function() {
+                  return __utils__.getElementByXPath("//a[contains(@href,'?cf=quickmatch')]").href;
+              });
+              this.echo('you just rated ' + url, 'INFO');
+              this.open(url);
+              this.echo('...visiting her profile'); 
+          });
+          
+          casper.thenOpen('http://www.okcupid.com/quickmatch', function() {
+          });
+
     casper.then(function() {
         this.click(x('//*[@id="stars"]/li[5]'));
-        this.wait(3000); // wait before doing anything else  
-        this.echo('you just gave 5 stars to ' + this.evaluate(function() {
-            return __utils__.getElementByXPath('//a[contains(@href, "?cf=quickmatch/")]').getAttribute('href');
-        }), 'INFO'); // print dat shit
+        this.wait(1000); //   
     });
+
+          casper.then(function() {
+              var url = this.evaluate(function() {
+                  return __utils__.getElementByXPath("//a[contains(@href,'?cf=quickmatch')]").href;
+              });
+              this.echo('you just rated ' + url, 'INFO');
+              this.open(url);
+              this.echo('...visiting her profile'); 
+          });
+          
+          casper.thenOpen('http://www.okcupid.com/quickmatch', function() {
+          });
+
     casper.then(function() {
         this.click(x('//*[@id="stars"]/li[5]'));
-        this.wait(3000); // wait before doing anything else  
-        this.echo('you just gave 5 stars to ' + this.evaluate(function() {
-            return __utils__.getElementByXPath('//a[contains(@href, "?cf=quickmatch/")]').getAttribute('href');
-        }), 'INFO'); // print dat shit
+        this.wait(1000); //   
     });
+
+          casper.then(function() {
+              var url = this.evaluate(function() {
+                  return __utils__.getElementByXPath("//a[contains(@href,'?cf=quickmatch')]").href;
+              });
+              this.echo('you just rated ' + url, 'INFO');
+              this.open(url);
+              this.echo('...visiting her profile'); 
+          });
+          
+          casper.thenOpen('http://www.okcupid.com/quickmatch', function() {
+          });
+
     casper.then(function() {
         this.click(x('//*[@id="stars"]/li[5]'));
-        this.wait(3000); // wait before doing anything else  
-        this.echo('you just gave 5 stars to ' + this.evaluate(function() {
-            return __utils__.getElementByXPath('//a[contains(@href, "?cf=quickmatch/")]').getAttribute('href');
-        }), 'INFO'); // print dat shit
+        this.wait(1000); //   
     });
+
+          casper.then(function() {
+              var url = this.evaluate(function() {
+                  return __utils__.getElementByXPath("//a[contains(@href,'?cf=quickmatch')]").href;
+              });
+              this.echo('you just rated ' + url, 'INFO');
+              this.open(url);
+              this.echo('...visiting her profile'); 
+          });
+          
+          casper.thenOpen('http://www.okcupid.com/quickmatch', function() {
+          });
+
     casper.then(function() {
         this.click(x('//*[@id="stars"]/li[5]'));
-        this.wait(3000); // wait before doing anything else  
-        this.echo('you just gave 5 stars to ' + this.evaluate(function() {
-            return __utils__.getElementByXPath('//a[contains(@href, "?cf=quickmatch/")]').getAttribute('href');
-        }), 'INFO'); // print dat shit
+        this.wait(1000); //   
     });
+
+          casper.then(function() {
+              var url = this.evaluate(function() {
+                  return __utils__.getElementByXPath("//a[contains(@href,'?cf=quickmatch')]").href;
+              });
+              this.echo('you just rated ' + url, 'INFO');
+              this.open(url);
+              this.echo('...visiting her profile'); 
+          });
+          
+          casper.thenOpen('http://www.okcupid.com/quickmatch', function() {
+          });
+
     casper.then(function() {
         this.click(x('//*[@id="stars"]/li[5]'));
-        this.wait(3000); // wait before doing anything else  
-        this.echo('you just gave 5 stars to ' + this.evaluate(function() {
-            return __utils__.getElementByXPath('//a[contains(@href, "?cf=quickmatch/")]').getAttribute('href');
-        }), 'INFO'); // print dat shit
+        this.wait(1000); //   
     });
+
+          casper.then(function() {
+              var url = this.evaluate(function() {
+                  return __utils__.getElementByXPath("//a[contains(@href,'?cf=quickmatch')]").href;
+              });
+              this.echo('you just rated ' + url, 'INFO');
+              this.open(url);
+              this.echo('...visiting her profile'); 
+          });
+          
+          casper.thenOpen('http://www.okcupid.com/quickmatch', function() {
+          });
+
     casper.then(function() {
         this.click(x('//*[@id="stars"]/li[5]'));
-        this.wait(3000); // wait before doing anything else  
-        this.echo('you just gave 5 stars to ' + this.evaluate(function() {
-            return __utils__.getElementByXPath('//a[contains(@href, "?cf=quickmatch/")]').getAttribute('href');
-        }), 'INFO'); // print dat shit
+        this.wait(1000); //   
     });
+
+          casper.then(function() {
+              var url = this.evaluate(function() {
+                  return __utils__.getElementByXPath("//a[contains(@href,'?cf=quickmatch')]").href;
+              });
+              this.echo('you just rated ' + url, 'INFO');
+              this.open(url);
+              this.echo('...visiting her profile'); 
+          });
+          
+          casper.thenOpen('http://www.okcupid.com/quickmatch', function() {
+          });
+
     casper.then(function() {
         this.click(x('//*[@id="stars"]/li[5]'));
-        this.wait(3000); // wait before doing anything else  
-        this.echo('you just gave 5 stars to ' + this.evaluate(function() {
-            return __utils__.getElementByXPath('//a[contains(@href, "?cf=quickmatch/")]').getAttribute('href');
-        }), 'INFO'); // print dat shit
+        this.wait(1000); //   
     });
+
+          casper.then(function() {
+              var url = this.evaluate(function() {
+                  return __utils__.getElementByXPath("//a[contains(@href,'?cf=quickmatch')]").href;
+              });
+              this.echo('you just rated ' + url, 'INFO');
+              this.open(url);
+              this.echo('...visiting her profile'); 
+          });
+          
+          casper.thenOpen('http://www.okcupid.com/quickmatch', function() {
+          });
+
     casper.then(function() {
         this.click(x('//*[@id="stars"]/li[5]'));
-        this.wait(3000); // wait before doing anything else  
-        this.echo('you just gave 5 stars to ' + this.evaluate(function() {
-            return __utils__.getElementByXPath('//a[contains(@href, "?cf=quickmatch/")]').getAttribute('href');
-        }), 'INFO'); // print dat shit
+        this.wait(1000); //   
     });
-    casper.then(function() {
-        this.click(x('//*[@id="stars"]/li[5]'));
-        this.wait(3000); // wait before doing anything else  
-        this.echo('you just gave 5 stars to ' + this.evaluate(function() {
-            return __utils__.getElementByXPath('//a[contains(@href, "?cf=quickmatch/")]').getAttribute('href');
-        }), 'INFO'); // print dat shit
-    });
+
+          casper.then(function() {
+              var url = this.evaluate(function() {
+                  return __utils__.getElementByXPath("//a[contains(@href,'?cf=quickmatch')]").href;
+              });
+              this.echo('you just rated ' + url, 'INFO');
+              this.open(url);
+              this.echo('...visiting her profile'); 
+          });
+          
+          casper.thenOpen('http://www.okcupid.com/quickmatch', function() {
+          });
+
 
 casper.run(function() {
     this.exit();
 });
-
-
 
